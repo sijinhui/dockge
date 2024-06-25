@@ -22,7 +22,7 @@ COPY --from=build /app/node_modules /app/node_modules
 COPY --chown=node:node  . .
 RUN mkdir ./data
 
-VOLUME /app/data
+#VOLUME /app/data
 EXPOSE 5001
 HEALTHCHECK --interval=60s --timeout=30s --start-period=60s --retries=5 CMD extra/healthcheck
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
